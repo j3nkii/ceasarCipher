@@ -8,29 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p>      if(ascii < 65 || (ascii > 90 && ascii < 97) || ascii > 122) {
-        converted= converted.concat(String.fromCharCode(ascii))
-      }
-      ascii+=number;
-      //if asciis are inside UPPER values, push to return reuslt
-      //using 78, to make sure no outside chars come in
-      if(ascii <= 90 && ascii >= 78) {
-        converted = converted.concat(String.fromCharCode(ascii))
-      }
-      //if ascii are outside UPPER values, subtract and add from begining of UPPER values 
-      if(ascii > 90 && ascii <= 103) {
-        converted = converted.concat(String.fromCharCode(ascii - 90 + 64))
-      }
-      //if ascii are inside LOWER values, add to string
-      if(ascii >= 110 && ascii <= 122) {
-        converted = converted.concat(String.fromCharCode(ascii))
-      }
-      //if ascii are outside LOWER values, subtract and add from begining of LOWER values 
-      if(ascii > 122 && ascii <= 135) {
-        converted = converted.concat(String.fromCharCode(ascii - 90 + 64))
-      }
-      //console.log(converted)
-      //console.log(`coded: ${coded}`)</p>
-    
+    <p>See console</p>
 </body>
 </html>
