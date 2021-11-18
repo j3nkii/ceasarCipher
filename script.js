@@ -1,11 +1,11 @@
 //https://www.codewars.com/kata/530e15517bc88ac656000716/train/javascript
 let sentence = 'Hello World!'
-let rotSentence = document.getElementById("rotInput").value;
-let rotNumber = document.getElementById("rotNumber").value;
+
 
 
 function rot(message, number) {
-
+  //let rotSentence = document.getElementById("rotInput").value;
+ // let rotNumber = document.getElementById("rotNumber").value;
     
   let coded = [];
   //converter
@@ -42,4 +42,4 @@ function rot(message, number) {
 }
 //document.getElementById("rot").innerHTML = `${rot(sentence, 13)}`;
 //document.getElementById("rot").innerHTML = "asscheeks"
-console.log(rot(rotSentence, rotNumber));
+//console.log(rot(rotSentence, rotNumber));
