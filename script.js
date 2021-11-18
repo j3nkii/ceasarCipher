@@ -1,8 +1,6 @@
 //https://www.codewars.com/kata/530e15517bc88ac656000716/train/javascript
 let sentence = 'Hello World!'
 
-
-
 function rot(message, number) {
   //let rotSentence = document.getElementById("rotInput").value;
  // let rotNumber = document.getElementById("rotNumber").value;

@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="stylesheet.css">
     <title>Ceasar Cipher</title>
 </head>
 <body>
-    <input type="text" id="rotInput" value="Hello World!">
+    <div class="content">
+        <div class="sentence">
+            <input type="text" id="rotInput" value="Hello World!">
+        </div>
 
-    <input type="text" id="rotNumber" value="13">
+        <div class="number">
+            <input type="text" id="rotNumber" value="13">
+        </div>
 
-    <button onclick="rot(document.getElementById('rotInput').value, document.getElementById('rotNumber').value)"> mothafucka </button>
-
-    <h1 id="rot">  </h1>
+        <div class="button">
+            <button onclick="rot(document.getElementById('rotInput').value, document.getElementById('rotNumber').value)">Encrypt Thine Message</button>
+        </div>
+        <div class="output">
+            <h1 id="rot">Mwuahahahah!!</h1>
+        </div>
+    </div>
 
 </body>
     <script src="script.js"></script>
