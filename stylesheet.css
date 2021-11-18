@@ -8,14 +8,19 @@ body{
 }
 
 body input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+.number{
+    text-align: right;
+}
 .sentence{
     padding-top: 20%;
 }
 .encrypted{
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
+    font-family: cursive;
+    padding-left: .5em;
+    padding-right: .5em;
     color: limegreen;
     padding-bottom: 20%; 
 
