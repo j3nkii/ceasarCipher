@@ -1,7 +1,12 @@
 //https://www.codewars.com/kata/530e15517bc88ac656000716/train/javascript
 let sentence = 'Hello World!'
+let rotSentence = document.getElementById("rotInput").value;
+let rotNumber = document.getElementById("rotNumber").value;
 
-function rot13(message, number) {
+
+function rot(message, number) {
+
+    
   let coded = [];
   //converter
   for(let index in message) {
@@ -19,7 +24,7 @@ function rot13(message, number) {
       //if uppercase
       if(ascii >= 65 && ascii <= 90){
           //add cipher
-          ascii+=number;
+          ascii+=parseInt(number);
           //if in range add to return string
           ascii >= 65 && ascii <= 90 ? converted = converted.concat(String.fromCharCode(ascii)) 
           //otherwise put it into range
@@ -27,13 +32,14 @@ function rot13(message, number) {
       }
       //if lowercase
       if(ascii >= 97 && ascii <= 122){
-        ascii+=number;
+        ascii+=parseInt(number);
         ascii >= 97 && ascii <= 122 ? converted = converted.concat(String.fromCharCode(ascii)) 
                   : converted = converted.concat(String.fromCharCode(ascii - 122 + 96))
       }
     }
-  return (converted)
+  return document.getElementById("rot").innerHTML = `${converted}`
   //if greater subtract and assign ot begining
 }
-
-console.log(rot13(sentence, 13));
+//document.getElementById("rot").innerHTML = `${rot(sentence, 13)}`;
+//document.getElementById("rot").innerHTML = "asscheeks"
+console.log(rot(rotSentence, rotNumber));
