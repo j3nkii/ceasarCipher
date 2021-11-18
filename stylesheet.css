@@ -1,20 +1,40 @@
 body{
-    background-image: url("glitch-static.gif");
+    background-image: url("mLkoda.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 
 body input{
-    size: "100";
 }
 
 .sentence{
-    margin-top: 4em;
+    padding-top: 20%;
+}
+.encrypted{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    color: limegreen;
+    padding-bottom: 20%; 
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("head.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 33%;
+    height: 100%;
 }
 
 .content div{
-    margin-left: 25%;
-    margin-right: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10em;
+
 }
