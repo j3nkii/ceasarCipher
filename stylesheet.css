@@ -4,26 +4,24 @@ body{
     background-size: cover;
     display: flex;
     justify-content: center;
-    height: 100%;
 }
 
 body input{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    display: block;
 }
-.number{
-    text-align: right;
+
+.button {
+    justify-content: center;
+    align-items: center;
+    display: block;
 }
-.sentence{
-    padding-top: 20%;
-}
+
 .encrypted{
     text-align: center;
     font-family: cursive;
-    padding-left: .5em;
-    padding-right: .5em;
-    color: limegreen;
-    padding-bottom: 20%; 
-
+    color: hotpink;
 }
 
 .content {
@@ -34,12 +32,7 @@ body input{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    padding-top: 4em;
     width: 33%;
-    height: 100%;
-}
-
-.content div{
-
+    height: 80vh;
 }
