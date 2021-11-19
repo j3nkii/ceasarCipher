@@ -17,7 +17,7 @@ function rot(message, number) {
   number = number%26;
   //instead of using subtraction, i just move it forward (a-1 && a+25 = z)
   if(number < 0){
-    number = 25 - Math.abs(number)
+    number = 26 - Math.abs(number)
   }
   //iterate through message and give it a numberical value based on its ascii to add the "number" later
   for(let index in message) {
@@ -25,8 +25,6 @@ function rot(message, number) {
   }
 
   let converted = '';
-  
-
 
   for(let ascii of coded) {
     if(ascii < 65 || (ascii < 90 && ascii > 97) || ascii >122){
@@ -36,7 +34,7 @@ function rot(message, number) {
       converted += ascii >= 65 && ascii <= 90
           ? String.fromCharCode(ascii)
           : String.fromCharCode(ascii - 26) 
-  } else if(ascii >= 97 && ascii <= 122){
+    } else if(ascii >= 97 && ascii <= 122){
         ascii+=parseInt(number);
         converted += ascii >= 97 && ascii <= 122 
             ? String.fromCharCode(ascii)
