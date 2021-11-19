@@ -23,17 +23,26 @@ function rot(message, number) {
   for(let index in message) {
     coded.push(message.charCodeAt(index));
   }
-
+  //to be used as a return string
   let converted = '';
-
+  // iterate through ascii values
   for(let ascii of coded) {
-    if(ascii < 65 || (ascii < 90 && ascii > 97) || ascii >122){
+    //if its not a letter, nothing happens, and it gets added to return string
+    if(ascii < 65 || (ascii > 90 && ascii < 97) || ascii > 122){
       converted+= String.fromCharCode(ascii);
+      //otherwise if its an upper case letter we need to add the number passed through the function
+      //uppercase and lower case need to be handled at different point in the code to avoid the overlap 
+      //uppsercase Z(90) + 10 = 100 which would be mistaken as a lowercase 
     }else if(ascii >= 65 && ascii <= 90){
+      //add the number passed to determin new value
       ascii+=parseInt(number);
+      //now with the new value, if it's still in the ranges where uppercase number occur,
+      //add it to string, otherwise 26 needs to be subtracted as to "reset" the alphabet.
       converted += ascii >= 65 && ascii <= 90
           ? String.fromCharCode(ascii)
           : String.fromCharCode(ascii - 26) 
+    //same thing as above but uses the values of the lowercase range.
+    //hopefully I can find a way to clean them up and add them together
     } else if(ascii >= 97 && ascii <= 122){
         ascii+=parseInt(number);
         converted += ascii >= 97 && ascii <= 122 
@@ -49,17 +58,18 @@ function rot(message, number) {
 
 
 
-/*TESTCASE
-let fuckmerunning = 0;
-while(fuckmerunning <= 26){
-  console.log(fuckmerunning ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', fuckmerunning));
-  console.log(fuckmerunning ,rot('abcdefghijklmnopqrstuvwxyz', fuckmerunning));
-  fuckmerunning++
+/*     //TESTCASE
+for(let i=0; i <= 26; i++){
+  console.log(i ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', i));
+  console.log(i ,rot('abcdefghijklmnopqrstuvwxyz', i));
 }
 
-fuckmerunning = 0;
-while(fuckmerunning >= -26){
-  console.log(fuckmerunning ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', fuckmerunning));
-  console.log(fuckmerunning ,rot('abcdefghijklmnopqrstuvwxyz', fuckmerunning));
-  fuckmerunning--
-  */
+zero = 0;
+for(let i= -26; i <= 0; i++){
+  console.log(i ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', i));
+  console.log(i ,rot('abcdefghijklmnopqrstuvwxyz', i));
+}
+for(let i=0; i <=126; i++){
+  console.log(i, rot(String.fromCharCode(i)));
+}
+*/ 
