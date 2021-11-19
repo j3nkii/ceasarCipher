@@ -15,37 +15,31 @@ function rot(message, number) {
   let coded = [];
   //makes numbers above 25 usable
   number = number%26;
+  //instead of using subtraction, i just move it forward (a-1 && a+25 = z)
   if(number < 0){
     number = 25 - Math.abs(number)
   }
-  //iterate through message and give it a numberical value to add the "number" later
+  //iterate through message and give it a numberical value based on its ascii to add the "number" later
   for(let index in message) {
     coded.push(message.charCodeAt(index));
   }
-  //if number will not work in function, return system overload and end funciton
-  //if(number < 0) {
-  //return document.getElementById("rot").innerHTML = "SYSTEM OVERLOAD"
-  //}
-  //return string
+
   let converted = '';
   
+
+
   for(let ascii of coded) {
-    if(ascii >= 65 && ascii <= 90){
-      //add the "number" to to the ascii value to be encrypted
+    if(ascii < 65 || (ascii < 90 && ascii > 97) || ascii >122){
+      converted+= String.fromCharCode(ascii);
+    }else if(ascii >= 65 && ascii <= 90){
       ascii+=parseInt(number);
-      //if in range of the uppercase values, add to "converted" encryption
       converted += ascii >= 65 && ascii <= 90
           ? String.fromCharCode(ascii)
-          //otherwise recalculate to start from begining of alphabet
           : String.fromCharCode(ascii - 26) 
   } else if(ascii >= 97 && ascii <= 122){
-        //cool, now add the roation
         ascii+=parseInt(number);
-        //is it still a letter?
         converted += ascii >= 97 && ascii <= 122 
-        //yes? cool, return that later
             ? String.fromCharCode(ascii)
-            //no? well, was it greater than 0?
             : String.fromCharCode(ascii - 26) 
     }
   }
@@ -70,4 +64,4 @@ while(fuckmerunning >= -26){
   console.log(fuckmerunning ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', fuckmerunning));
   console.log(fuckmerunning ,rot('abcdefghijklmnopqrstuvwxyz', fuckmerunning));
   fuckmerunning--
-}
+  */
