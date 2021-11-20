@@ -7,12 +7,23 @@
 //instead of going through creating numberical values for each letter,
 //i used the  ascii values(https://www.w3schools.com/charsets/ref_html_ascii.asp).
 //It also returns any character outside the Latin Alphabet
-
+console.log(
+  `********* T O P   S E C R E T`
+)
  //converter: pushes acsii values to "coded", which will be used later to add "number", and create a string with the new letters.
+ let force;
+ function hack(string){
+  for(let i=0; i < 26; i++){
+    console.log(i ,rot(string, i));
+  }
+ }
+
 function rot(message, number) {
 
   //array to contain acsii values of each character 
   let coded = [];
+  //to be used as a return string
+  let converted = '';
   //makes numbers above 25 usable
   number = number%26;
   //instead of using subtraction, i just move it forward (a-1 && a+25 = z)
@@ -22,11 +33,7 @@ function rot(message, number) {
   //iterate through message and give it a numberical value based on its ascii to add the "number" later
   for(let index in message) {
     coded.push(message.charCodeAt(index));
-  }
-  //to be used as a return string
-  let converted = '';
-  // iterate through ascii values
-  for(let ascii of coded) {
+    let ascii = coded[index]
     //if its not a letter, nothing happens, and it gets added to return string
     if(ascii < 65 || (ascii > 90 && ascii < 97) || ascii > 122){
       converted+= String.fromCharCode(ascii);
@@ -50,6 +57,7 @@ function rot(message, number) {
             : String.fromCharCode(ascii - 26) 
     }
   }
+  force = message;
   return document.getElementById("rot").innerHTML = `${converted}`
 }
 
@@ -58,7 +66,7 @@ function rot(message, number) {
 
 
 
-/*     //TESTCASE
+ /*    //TESTCASE
 for(let i=0; i <= 26; i++){
   console.log(i ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', i));
   console.log(i ,rot('abcdefghijklmnopqrstuvwxyz', i));
@@ -72,4 +80,4 @@ for(let i= -26; i <= 0; i++){
 for(let i=0; i <=126; i++){
   console.log(i, rot(String.fromCharCode(i)));
 }
-*/ 
+*/
