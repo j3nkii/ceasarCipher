@@ -38,7 +38,7 @@ function rot(message, number) {
   force = message;
   return document.getElementById("rot").innerHTML = `${converted}`
 }
- /*    //TESTCASE
+  /*   //TESTCASE
 for(let i=0; i <= 26; i++){
   console.log(i ,rot('ABCDEFGHIJKLMNOPQRSTUVWXYZ', i));
   console.log(i ,rot('abcdefghijklmnopqrstuvwxyz', i));
